@@ -1,20 +1,37 @@
-import { Counter } from "./components/Counter";
-import { FetchData } from "./components/FetchData";
 import { Home } from "./components/Home";
+import { Login } from "./components/Login";
+import { Cadastro } from "./components/Cadastro";
+import { Consultas } from "./components/Consultas";
+import { Ajuda } from "./components/Ajuda";
+import { SaidaSistema } from "./components/SaidaSistema";
 
+// rotas das paginas 
 const AppRoutes = [
   {
     index: true,
     element: <Home />
   },
   {
-    path: '/counter',
-    element: <Counter />
+    path: '/login',
+    element: <Login />
   },
   {
-    path: '/fetch-data',
-    element: <FetchData />
+    path: '/cadastro',
+    element: <Cadastro />
+  },
+  {
+    path: '/consultas',
+    element: <Consultas />
+  },
+  {
+    path: '/ajuda',
+    element: <Ajuda />
+  },
+  {
+    path: '/saidaSistema',
+    element: <SaidaSistema />
   }
+  
 ];
 
 export default AppRoutes;

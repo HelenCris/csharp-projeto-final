@@ -1,4 +1,9 @@
+using biblioteca.Model.Connection;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Conexão com o banco de dados
+builder.Services.AddNpgsql<DatabaseConnection>(builder.Configuration["DatabaseConnection:Npgsql"]);
 
 // Add services to the container.
 
@@ -25,3 +30,4 @@ app.MapControllerRoute(
 app.MapFallbackToFile("index.html");;
 
 app.Run();
+

@@ -1,7 +1,8 @@
 using biblioteca.Model.Connection;
 using CSharpProjetoFinal;
 
-namespace biblioteca.Request
+// criar o usuario
+namespace biblioteca.Routes
 {
   public class UserPost
     {
@@ -19,6 +20,3 @@ namespace biblioteca.Request
         }
     }
 }
-
-
- 

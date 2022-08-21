@@ -6,10 +6,10 @@ public class UserRepository
   public User CreateUser(User user, DatabaseConnection context) 
   {
     var NewUser = new User
-    (
-      user.Email_login,
-      user.Password_login
-    );
+    {
+      Email_login = user.Email_login,
+      Password_login = user.Password_login
+    };
     context.Users.Add(NewUser);
     context.SaveChanges();
 

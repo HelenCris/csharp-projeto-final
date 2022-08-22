@@ -1,4 +1,5 @@
 using biblioteca.Model.Connection;
+using biblioteca.Routes;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,7 +27,21 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action=Index}/{id?}");
 
-app.MapFallbackToFile("index.html");;
+app.MapFallbackToFile("index.html");
+
+
+app.MapMethods(UserGetSingle.Template, UserGetSingle.Methods, UserGetSingle.Handle);
+app.MapMethods(UserGet.Template, UserGet.Methods, UserGet.Handle);
+app.MapMethods(UserPost.Template, UserPost.Methods, UserPost.Handle);
+app.MapMethods(UserPut.Template, UserPut.Methods, UserPut.Handle);
+app.MapMethods(UserDelete.Template, UserDelete.Methods, UserDelete.Handle);
+
+app.MapMethods(BookGetSingle.Template, BookGetSingle.Methods, BookGetSingle.Handle);
+app.MapMethods(BookGet.Template, BookGet.Methods, BookGet.Handle);
+app.MapMethods(BookPost.Template, BookPost.Methods, BookPost.Handle);
+app.MapMethods(BookPut.Template, BookPut.Methods, BookPut.Handle);
+app.MapMethods(BookDelete.Template, BookDelete.Methods, BookDelete.Handle);
+
 
 app.Run();
 

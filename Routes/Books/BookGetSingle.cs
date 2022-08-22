@@ -15,7 +15,7 @@ namespace biblioteca.Routes
         public static IResult Action([FromRoute] int id, DatabaseConnection context)
         {
             var bookRepository = new BookRepository();
-            Book book = bookRepository.GetBookSingle(id, context);
+            Book book = bookRepository.GetSingleBook(id, context);
             return Results.Ok(book);
         }
     }

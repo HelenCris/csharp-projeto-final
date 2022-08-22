@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using biblioteca.Model.Connection;
-using biblioteca.Model.Repository;
+using Repository;
 
 // deletar usuario
 namespace biblioteca.Routes

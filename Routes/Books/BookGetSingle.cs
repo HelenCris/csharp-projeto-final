@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using biblioteca.Model.Connection;
-using biblioteca.Model.Repository;
-using biblioteca.Model.Response;
+using Repository;
+using CSharpProjetoFinal;
 
 // mostrar um livro específico
 namespace biblioteca.Routes
 {
-    public class BookGetSingle
+  public class BookGetSingle
     {
         public static string Template => "/book/{id}";
         public static string[] Methods => new string[] {HttpMethod.Get.ToString()};
@@ -15,7 +15,7 @@ namespace biblioteca.Routes
         public static IResult Action([FromRoute] int id, DatabaseConnection context)
         {
             var bookRepository = new BookRepository();
-            BookResponse book = bookRepository.GetBookSingle(id, context);
+            Book book = bookRepository.GetBookSingle(id, context);
             return Results.Ok(book);
         }
     }

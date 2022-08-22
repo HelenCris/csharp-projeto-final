@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using biblioteca.Model.Connection;
-using biblioteca.Model.Repository;
-using biblioteca.Model.Response;
+using Repository;
+using CSharpProjetoFinal;
 
 // mostrar um usuario específico
 namespace biblioteca.Routes
 {
-    public class UserGetSingle
+  public class UserGetSingle
     {
         public static string Template => "/user/{id}";
         public static string[] Methods => new string[] {HttpMethod.Get.ToString()};
@@ -15,7 +15,7 @@ namespace biblioteca.Routes
         public static IResult Action([FromRoute] int id, DatabaseConnection context)
         {
             var userRepository = new UserRepository();
-            UserResponse user = userRepository.GetUserSingle(id, context);
+            User user = userRepository.GetUserSingle(id, context);
             return Results.Ok(user);
         }
     }

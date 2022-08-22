@@ -1,5 +1,6 @@
 using biblioteca.Model.Connection;
 using CSharpProjetoFinal;
+using Repository;
 
 // criar o usuario
 namespace biblioteca.Routes

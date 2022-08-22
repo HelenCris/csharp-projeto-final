@@ -1,11 +1,11 @@
 using biblioteca.Model.Connection;
-using biblioteca.Model.Repository;
-using biblioteca.Model.Response;
+using CSharpProjetoFinal;
+using Repository;
 
 //mostrar todos os usuarios
 namespace biblioteca.Routes
 {
-    public class UserGet
+  public class UserGet
     {
         public static string Template => "/user";
         public static string[] Methods => new string[] {HttpMethod.Get.ToString()};
@@ -14,7 +14,7 @@ namespace biblioteca.Routes
         public static IResult Action(DatabaseConnection context)
         {
             var userRepository = new UserRepository();
-            List<UserResponse> users = userRepository.GetAllUser(context);
+            List<User> users = userRepository.GetAllUser(context);
             return Results.Ok(users);
         }
     }

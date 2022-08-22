@@ -4,10 +4,10 @@ namespace CSharpProjetoFinal{
     public class Book
     {
         public long Id { get; set; }
-        public string Code_book { get; set; }
-        public string Title_book { get; set; }
-        public string Author { get; set; }
-        public string Description_book { get; set; }
+        public string? Code_book { get; set; }
+        public string? Title_book { get; set; }
+        public string? Author { get; set; }
+        public string? Description_book { get; set; }
 
         // public Book(
         //     string code_book,

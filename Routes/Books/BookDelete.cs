@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using biblioteca.Model.Connection;
-using biblioteca.Model.Repository;
-
+using Repository;
 // Deletar Livro
 namespace biblioteca.Routes
 {

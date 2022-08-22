@@ -1,6 +1,7 @@
 using biblioteca.Model.Connection;
-using biblioteca.Model.Repository;
-using biblioteca.Model.Response;
+using CSharpProjetoFinal;
+using Repository;
+
 
 //mostrar todos os livros
 namespace biblioteca.Routes
@@ -14,7 +15,7 @@ namespace biblioteca.Routes
         public static IResult Action(DatabaseConnection context)
         {
             var bookRepository = new BookRepository();
-            List<BookResponse> books = bookRepository.GetAllBook(context);
+            List<Book> books = bookRepository.GetAllBook(context);
             return Results.Ok(books);
         }
     }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Cadastro.css';
+import './styles.css';
 // pagina do login
 
 export class Cadastro extends Component {
@@ -15,7 +15,7 @@ export class Cadastro extends Component {
             <input type="password" placeholder="Digite uma senha"/>
             <input type="password" placeholder="Digite novamente sua senha"/>
             <button>cadastrar</button>
-            <p class="message">Tem uma conta? <a href="./login">Entre na conta</a></p>
+            <p class="message">Tem uma conta? <a href="./login">Entre na sua conta</a></p>
           </form>
         </div>
       </div>

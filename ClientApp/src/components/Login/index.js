@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Login.css';
+import './styles.css';
 // pagina do login
 
 export class Login extends Component {

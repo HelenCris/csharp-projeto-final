@@ -1,9 +1,8 @@
-import { Home } from "./components/Home";
-import { Login } from "./components/Login";
-import { Cadastro } from "./components/Cadastro";
-import { Consultas } from "./components/Consultas";
-import { Ajuda } from "./components/Ajuda";
-import { SaidaSistema } from "./components/SaidaSistema";
+import { Home } from "./components/Home/index";
+import { Login } from "./components/Login/index";
+import { Cadastro } from "./components/Cadastro/index";
+import { Consultas } from "./components/Consultas/index";
+import { Ajuda } from "./components/Ajuda/index";
 
 // rotas das paginas 
 const AppRoutes = [
@@ -26,10 +25,6 @@ const AppRoutes = [
   {
     path: '/ajuda',
     element: <Ajuda />
-  },
-  {
-    path: '/saidaSistema',
-    element: <SaidaSistema />
   }
   
 ];

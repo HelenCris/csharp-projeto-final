@@ -7,16 +7,16 @@ namespace Repository
   {
     public User GetUserSingle(int id, DatabaseConnection context)
     {
-      var user = context.Users.Where(u => u.Id == id).First();
+      // var user = context.Users.Where(u => u.Id == id).First();
       
-        var response = new User
-        {
-          Name = user.Name,
-          Email = user.Email,
-          Password = user.Password
-        };
-      
-      return response;
+      // var response = new User
+      // {
+      //   Name = user.Name,
+      //   Email = user.Email,
+      //   Password = user.Password
+      // };
+
+      return context.Users.Where(u => u.Id == id).FirstOrDefault();
     }
 
     public List<User> GetAllUser(DatabaseConnection context)
@@ -43,9 +43,9 @@ namespace Repository
       {
       var userUnique = context.Users.Where(u => u.Id == id).First();
 
-      user.Name = user.Name != null ? user.Name : userUnique.Name;
-      user.Email = user.Email != null ? user.Email : userUnique.Email; 
-      user.Password = user.Password != null ? user.Password : userUnique.Password;
+      userUnique.Name = user.Name != null ? user.Name : userUnique.Name;
+      userUnique.Email = user.Email != null ? user.Email : userUnique.Email; 
+      userUnique.Password = user.Password != null ? user.Password : userUnique.Password;
 
       context.SaveChanges();
 

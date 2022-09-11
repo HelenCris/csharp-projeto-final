@@ -1,12 +1,10 @@
 using biblioteca.Model.Connection;
-using CSharpProjetoFinal;
-using Repository;
-
+using Service;
 
 //mostrar todos os livros
 namespace biblioteca.Routes
 {
-    public class BookGet
+  public class BookGet
     {
         public static string Template => "/book";
         public static string[] Methods => new string[] {HttpMethod.Get.ToString()};
@@ -14,9 +12,9 @@ namespace biblioteca.Routes
 
         public static IResult Action(DatabaseConnection context)
         {
-            var bookRepository = new BookRepository();
-            List<Book> Books = bookRepository.GetAllBooks(context);
-            return Results.Ok(Books);
+            var booksService = new BookService();
+            var books = booksService.GetAllBooks(context);
+            return books;
         }
     }
 }

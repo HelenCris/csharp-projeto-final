@@ -7,7 +7,7 @@ namespace Repository
   {
     public Book GetSingleBook(int id, DatabaseConnection context)
     {
-      var book = context.Books.Where(p => p.Id == id).First();
+      var book = context.Books.Where(p => p.Id == id).FirstOrDefault();
       return book;
     }
 

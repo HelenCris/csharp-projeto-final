@@ -18,22 +18,13 @@ namespace Service
         }
 
         return Results.Ok(book);
-
-        // User? user = userRepository.GetUserSingle(id, context);
-
-        // if(user == null)
-        //     return Results.NotFound("Usuário não encontrado");
-             
-        // return Results.Ok(user);
     }
 
-    // public IResult GetAllBooks(DatabaseConnection context)
-    // {
-        // var userRepository = new UserRepository();
-        
-        // List<User> users = userRepository.GetAllUsers(context);
-        
-        // return Results.Ok(users);
-    // }
+    public IResult GetAllBooks(DatabaseConnection context)
+    {
+        var booksRepository= new BookRepository();
+        var books = booksRepository.GetAllBooks(context);
+        return Results.Ok(books);
+    }
   }
 }

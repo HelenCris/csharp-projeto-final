@@ -7,14 +7,6 @@ namespace Repository
   {
     public User GetUserSingle(int id, DatabaseConnection context)
     {
-      // var user = context.Users.Where(u => u.Id == id).First();
-      
-      // var response = new User
-      // {
-      //   Name = user.Name,
-      //   Email = user.Email,
-      //   Password = user.Password
-      // };
 
       var user = context.Users.Where(u => u.Id == id).FirstOrDefault();
 

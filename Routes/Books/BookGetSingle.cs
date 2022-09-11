@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using biblioteca.Model.Connection;
-using Repository;
-using CSharpProjetoFinal;
+using Service;
 
 // mostrar um livro específico
 namespace biblioteca.Routes
@@ -14,9 +13,9 @@ namespace biblioteca.Routes
 
         public static IResult Action([FromRoute] int id, DatabaseConnection context)
         {
-            var bookRepository = new BookRepository();
-            Book book = bookRepository.GetSingleBook(id, context);
-            return Results.Ok(book);
+            var bookService = new BookService();
+            var book = bookService.GetSingleBook(id, context);
+            return book;
         }
     }
 }

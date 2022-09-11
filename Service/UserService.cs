@@ -27,6 +27,5 @@ namespace Service
         
         return Results.Ok(users);
     }
-
-}
+  }
 }

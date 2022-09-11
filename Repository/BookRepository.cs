@@ -8,16 +8,7 @@ namespace Repository
     public Book GetSingleBook(int id, DatabaseConnection context)
     {
       var book = context.Books.Where(p => p.Id == id).First();
-            
-      var response = new Book
-      {
-        Code_book = book.Code_book,
-        Title_book = book.Title_book,
-        Author = book.Author,
-        Description_book = book.Description_book,
-      };
-      context.SaveChanges();
-      return response;
+      return book;
     }
 
 

@@ -17,12 +17,5 @@ namespace biblioteca.Routes
             return user;
         }
    
-
-        // public static IResult Action([FromRoute] int id, DatabaseConnection context)
-        // {
-        //     var userRepository = new UserRepository();
-        //     User user = userRepository.GetUserSingle(id, context);
-        //     return Results.Ok(user);
-        // }
     }
 }

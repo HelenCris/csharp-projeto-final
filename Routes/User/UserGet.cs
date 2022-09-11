@@ -1,5 +1,4 @@
 using biblioteca.Model.Connection;
-using CSharpProjetoFinal;
 using Service;
 
 //mostrar todos os usuarios
@@ -13,11 +12,8 @@ namespace biblioteca.Routes
 
         public static IResult Action(DatabaseConnection context)
         {
-            // var userRepository = new UserRepository();
-            // List<User> users = userRepository.GetAllUser(context);
-            // return Results.Ok(users);
             var userService = new UserService();
-            List<User> users = userService.GetAllUsers(context);
+            var users = userService.GetAllUsers(context);
             return users;
 
         }

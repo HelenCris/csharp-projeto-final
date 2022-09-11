@@ -7,14 +7,16 @@ namespace biblioteca.Routes
 {
   public class UserGetSingle
     {
+        public static string Template => "/user/{id}";
+        public static string[] Methods => new string[] {HttpMethod.Get.ToString()};
+        public static Delegate Handle => Action;
         public static IResult Action([FromRoute] int id, DatabaseConnection context)
         {
             var userService = new UserService();
-            return userService.GetUserSingle(id, context);
+            var user = userService.GetUserSingle(id, context);
+            return user;
         }
-        // public static string Template => "/user/{id}";
-        // public static string[] Methods => new string[] {HttpMethod.Get.ToString()};
-        // public static Delegate Handle => Action;
+   
 
         // public static IResult Action([FromRoute] int id, DatabaseConnection context)
         // {

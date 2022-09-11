@@ -18,5 +18,15 @@ namespace Service
              
         return Results.Ok(user);
     }
+
+    public IResult GetAllUsers(DatabaseConnection context)
+    {
+        var userRepository = new UserRepository();
+        
+        List<User> users = userRepository.GetAllUsers(context);
+        
+        return Results.Ok(users);
+    }
+
 }
 }

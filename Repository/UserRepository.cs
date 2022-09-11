@@ -16,10 +16,12 @@ namespace Repository
       //   Password = user.Password
       // };
 
-      return context.Users.Where(u => u.Id == id).FirstOrDefault();
+      var user = context.Users.Where(u => u.Id == id).FirstOrDefault();
+
+      return user;
     }
 
-    public List<User> GetAllUser(DatabaseConnection context)
+    public List<User> GetAllUsers(DatabaseConnection context)
     {
       List<User> users = context.Users.ToList();
       return users;

@@ -21,13 +21,7 @@ namespace Repository
 
     public User CreateUser(User user, DatabaseConnection context) 
     {
-      var newUser = new User
-      {
-        Name = user.Name,
-        Email = user.Email,
-        Password = user.Password
-      };
-      context.Users.Add(newUser);
+      context.Users.Add(user);
       context.SaveChanges();
 
       return user;

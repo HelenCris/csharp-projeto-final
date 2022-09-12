@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using biblioteca.Model.Connection;
-using Repository;
 using CSharpProjetoFinal;
+using Service;
 
 // atualizar o usuario
 namespace biblioteca.Routes
@@ -14,10 +14,10 @@ namespace biblioteca.Routes
 
         public static IResult Action([FromRoute]int id, User userRequest, DatabaseConnection context)
         {
-            var userRepository = new UserRepository();
-            var user = userRepository.UpdateUser(id, userRequest, context);
+            var userService = new UserService();
+            var user = userService.UpdateUser(id, userRequest, context);
 
-            return Results.StatusCode(204);
+            return user;
         }
     }
 }

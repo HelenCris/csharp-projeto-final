@@ -1,6 +1,6 @@
 using biblioteca.Model.Connection;
 using CSharpProjetoFinal;
-using Repository;
+using Service;
 
 // criar o usuario
 namespace biblioteca.Routes
@@ -13,11 +13,11 @@ namespace biblioteca.Routes
 
         public static IResult Action(User user, DatabaseConnection context)
         {
-            var userRepository = new UserRepository();
-            var userPost = new User();
-            userPost = userRepository.CreateUser(user, context);
+
+            var userService = new UserService();
+            var userPost = userService.CreateUser(user, context);
+            return userPost;           
             
-            return Results.Created($"/user/{user.Id}", user.Id);
         }
     }
 }

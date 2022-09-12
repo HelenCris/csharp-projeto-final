@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using biblioteca.Model.Connection;
-using Repository;
 using CSharpProjetoFinal;
+using Service;
 
 // atualizar os livros
 namespace biblioteca.Routes
@@ -14,10 +14,10 @@ namespace biblioteca.Routes
 
         public static IResult Action([FromRoute]int id, Book bookRequest, DatabaseConnection context)
         {
-            var bookRepository = new BookRepository();
-            var book = bookRepository.UpdateBook(id, bookRequest, context);
+            var bookService = new BookService();
+            var book = bookService.UpdateBook(id, bookRequest, context);
 
-            return Results.StatusCode(204);
+            return book;
         }
     }
 }

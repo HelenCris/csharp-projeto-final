@@ -21,14 +21,8 @@ namespace Repository
 
     public Book CreateBook(Book book, DatabaseConnection context) 
     {
-      var newBook = new Book
-      {
-        Code_book = book.Code_book,
-        Title_book = book.Title_book,
-        Author = book.Author,
-        Description_book = book.Description_book,
-      };
-      context.Books.Add(newBook);
+
+      context.Books.Add(book);
       context.SaveChanges();
 
       return book;

@@ -50,6 +50,9 @@ namespace Service
         var userRepository = new UserRepository();
         var user = userRepository.DeleteUser(id,  context);
 
+        if(user == null)
+            return Results.NotFound("Usuário não encontrado");
+
         return Results.StatusCode(200);
      }
   }

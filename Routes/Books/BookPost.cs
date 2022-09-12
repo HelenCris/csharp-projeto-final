@@ -1,6 +1,6 @@
 using biblioteca.Model.Connection;
 using CSharpProjetoFinal;
-using Repository;
+using Service;
 // criar o livro
 namespace biblioteca.Routes
 {
@@ -11,12 +11,10 @@ namespace biblioteca.Routes
         public static Delegate Handle => Action;
 
         public static IResult Action(Book book, DatabaseConnection context)
-        {
-            var bookRepository = new BookRepository();
-            var bookPost = new Book();
-            bookPost = bookRepository.CreateBook(book, context);
-            
-            return Results.Created($"/book/{book.Id}", book.Id);
+        {        
+            var bookService = new BookService();
+            var bookPost = bookService.CreateBook(book, context);
+            return bookPost; 
         }
     }
 }

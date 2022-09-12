@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using biblioteca.Model.Connection;
-using Repository;
+using Service;
 // Deletar Livro
 namespace biblioteca.Routes
 {
-    public class BookDelete
+  public class BookDelete
     {
         public static string Template => "/book/{id}";
         public static string[] Methods => new string[] { HttpMethod.Delete.ToString()};
@@ -12,10 +12,10 @@ namespace biblioteca.Routes
 
         public static IResult Action([FromRoute]int id, DatabaseConnection context)
         {
-            var bookRepository = new BookRepository();
-            var book = bookRepository.DeleteBook(id,  context);
+            var bookService = new BookService();
+            var book = bookService.DeleteBook(id,  context);
 
-            return Results.StatusCode(200);
+            return book;
         }
     }
 }

@@ -5,12 +5,18 @@ namespace Repository
 {
   public class UserRepository 
   {
-    public User GetUserSingle(int id, DatabaseConnection context)
+    public User GetUserSingle(Login login, DatabaseConnection context)
     {
+      
+      User u = null;
+      List<User> users = context.Users.ToList();
+      foreach(User user in users) {
+        if(user.Email == login.Email && user.Password == login.Password) {
+          u = new User{Id = user.Id, Name = user.Name, Email = user.Email, Password = user.Password};
+        }
+      }
 
-      var user = context.Users.Where(u => u.Id == id).FirstOrDefault();
-
-      return user;
+      return u;
     }
 
     public List<User> GetAllUsers(DatabaseConnection context)

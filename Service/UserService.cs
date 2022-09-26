@@ -6,15 +6,15 @@ namespace Service
 {
   public class UserService 
   {
-    public IResult GetUserSingle(int id, DatabaseConnection context)
+    public IResult GetUserSingle(Login login, DatabaseConnection context)
     {
 
         UserRepository userRepository = new UserRepository();
 
-        User? user = userRepository.GetUserSingle(id, context);
+        User? user = userRepository.GetUserSingle(login, context);
 
         if(user == null)
-            return Results.NotFound("Usuário não encontrado");
+            return Results.NotFound("Usuário ou senha inválidos");
              
         return Results.Ok(user);
     }
